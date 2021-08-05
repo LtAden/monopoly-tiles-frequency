@@ -5,7 +5,7 @@ Tile class will feature two parameters: one will be tile name, other will be the
 during the program run. Tiles will be named according to more abstract map layout - so Brown1, Transport3 or Chance2-Orange, correspoding to, in order
 First property of brown color, thrid transport tile counting from the start, and chance tile of the second type, located between orange property tiles. 
 And then, every time player lands on a tile, its count will increase by one. Additionally, after that count increase, if any location-altering event
-happens, that tile will also get its count increased. Example: player lands on chance tile between teal properties, and gets a card sending them
+happens, player is moved, and that tile will also get its count increased. Example: player lands on chance tile between teal properties, and gets a card sending them
 to second navy property. So both of those tiles got their count increased by one (so total count will be higher than set limit of rolls).
 
 Location-altering events:
@@ -14,9 +14,12 @@ is sent to jail instead of moving to tile indicated by amount of dots.
 -chance cards - there are few cards that move player to different tiles. 
 -go to jail tile - sends player to jail
 
-At the end, program will print out how many times each tile was landed on, maybe with % value. Any thinking person already knows that prison will
-be the tile most landed on, and so, since 7 is most likely number to come from two dices (6 out of 36 possible combinations), followed by 6 and 8, 
-the orange properties seem to be most often landed on (7th tile from prison is a chance tile)
+At the end, program will print out how many times each tile was landed on, along with % value. With a bit of thinking, its obvious that the prison will
+be the tile most landed on, and so, since 7 is most likely number to come from two dices (6 out of 36 possible combinations), followed by 6 and 8 (5/36 each), 
+the orange properties seem to be most often landed on (7th tile from prison is a chance tile).
+
+Tile names and chance deck contents were based on polish version of Friends-themed Monopoly.
+It's assumed that hypothetical player leaves jail in next turn.
 
 Tile names and card actions:
 Tiles:
@@ -59,11 +62,15 @@ Tiles:
 37. ChanceType2/Navy
 38. Navy1
 39. Tax2
-40. Navy2ChanceType1:
+40. Navy2
+
+ChanceType1:
 Cards: 16
 Movement cards:
 1x - go to jail
-1x - go to startChanceType2:
+1x - go to start
+
+ChanceType2:
 Cards: 16
 Movement Cards:
 1x - go to jail
